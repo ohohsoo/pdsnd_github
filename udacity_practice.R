@@ -33,55 +33,6 @@ ggplot(data = washington, aes(x = floor_date(Start.Time2, "month")))+
 #         And in general, if you have the solutions for all the listed questions in Project Details,
 #         I'd really appreciate if you could provide me the sample solutions
 #         because I really want to be able to handle data with dates. Thank you in advance.
-
-##################################SAMPLE ANSWER BELOW################################
-  library(ggplot2)
-  # new york data
-  ny$Start.Time <- strptime(ny$Start.Time, format="%Y-%m-%d %H:%M:%S")
-  ny$weekday <- weekdays(ny$Start.Time)
-  ny$hour <- ny$Start.Time$hour
-  ny$month <- months(ny$Start.Time)
-  
-  # chicago data
-  chi$Start.Time <- strptime(chi$Start.Time, format="%Y-%m-%d %H:%M:%S")
-  chi$weekday <- weekdays(chi$Start.Time)
-  chi$hour <- chi$Start.Time$hour
-  chi$month <- months(chi$Start.Time)
-  
-  # washington data
-  wash$Start.Time <- strptime(wash$Start.Time, format="%Y-%m-%d %H:%M:%S")
-  wash$weekday <- weekdays(wash$Start.Time)
-  wash$hour <- wash$Start.Time$hour
-  wash$month <- months(wash$Start.Time)
-  
-  # Custom function to handle mode calculation.
-  Mode <- function(x, na.rm = FALSE) {
-    if(na.rm){
-      x = x[!is.na(x)]
-    }
-    ux <- unique(x)
-    return(ux[which.max(tabulate(match(x, ux)))])
-  }
-  
-  
-  ## most common month, weekday and hour in NYC
-  
-  print(Mode(ny$month))
-  print(Mode(ny$weekday))
-  print(Mode(ny$hour))
-  
-  
-  ##  Plots for most common month, weekday and hour in NYC
-  qplot(x=ny$weekday, data = ny)
-  + labs(title = "Most common day of week",x = "Days", y = "Count")
-
-  qplot(x=ny$month, data = ny)
-  + labs(title = "Most common month", x = "Month", y = "Count")
-  
-  qplot(x=ny$hour, data = ny)+ xlim(13,18) 
-  + labs(title = "Most common hour of day", x = "Hour", y = "Count")
-
-##########################SAMPLE ANSWER ABOVE####################################
   
 # What is the most common month in all 3 cities?
 washstart <- washington$Start.Time2
