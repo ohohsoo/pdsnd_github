@@ -1,15 +1,9 @@
-### Date created
-Include the date you created this project and README file.
-
-### Project Title
-Replace the Project Title
+### Bikeshare Project
+There are three datasets from three cities Chicago, New York City and Washington.
 
 ### Description
-Describe what your project is about and what it does
+The student analyzes the datasets with R and visualizes the findings in diagrams.
 
 ### Files used
-Include the files used
-
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+chicago.csv, new-york-city.csv, washington.csv
 
